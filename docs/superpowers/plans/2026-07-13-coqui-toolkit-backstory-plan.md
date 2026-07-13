@@ -42,7 +42,7 @@ Relocate the backstory *generator* out of coqui core into this optional toolkit 
   - `extra.php-agents`: `toolkits: ["CoquiBot\\Toolkits\\Backstory\\BackstoryToolkit"]`, plus a `description`. (No `backstoryExtractors`.)
   - `scripts`: `"test": "pest"`, `"analyse": "phpstan analyse --memory-limit=1G"`.
   - `config`: `sort-packages: true`, `allow-plugins.pestphp/pest-plugin: true`. `minimum-stability: stable`, `prefer-stable: true`.
-- `phpstan.neon`: level 8; `paths: [src, tests]`; `scanFiles: [stubs/coqui_repl_contracts.php]`; `tmpDir: .phpstan-cache`.
+- `phpstan.neon`: level 8; `paths: [src]` (production code only — matches coqui core + the `-formats` sibling, which both phpstan `src` not `tests`; Pest closures trip L8 with framework-inherent false positives, and the suite is validated by running it); `scanFiles: [stubs/coqui_repl_contracts.php]`; `tmpDir: .phpstan-cache`.
 - `phpunit.xml`: bootstrap `vendor/autoload.php`, cacheDirectory `.phpunit.cache`, one testsuite `Tests` → `tests` dir; `<source><include><directory>src</directory></include></source>`.
 - `.gitignore`: `vendor/`, `.env`, `.DS_Store`, `*.cache`, `.phpstan-cache/`, `.phpunit.cache/`, `.phpunit.result.cache`, `composer.lock`.
 - `stubs/coqui_repl_contracts.php`: copy VERBATIM from `/home/carmelo/Projects/CoquiBot/Core/coqui-toolkit-images/stubs/coqui_repl_contracts.php`.
