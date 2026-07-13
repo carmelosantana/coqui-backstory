@@ -51,7 +51,7 @@ test('backstoryLabel returns the configured label when present', function () {
     mkdir($profilePath, 0755, true);
     file_put_contents(
         $profilePath . '/preferences.json',
-        json_encode(['labels' => ['backstory' => 'Lore']]),
+        json_encode(['prompts' => ['labels' => ['backstory' => 'Lore']]]),
     );
 
     $paths = new ProfilePaths($this->workspace);
@@ -73,7 +73,7 @@ test('backstoryLabel returns null when the label key is absent', function () {
     mkdir($profilePath, 0755, true);
     file_put_contents(
         $profilePath . '/preferences.json',
-        json_encode(['labels' => ['other' => 'value']]),
+        json_encode(['prompts' => ['labels' => ['other' => 'value']]]),
     );
 
     $paths = new ProfilePaths($this->workspace);

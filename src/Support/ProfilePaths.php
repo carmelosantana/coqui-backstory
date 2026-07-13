@@ -35,8 +35,9 @@ final readonly class ProfilePaths
      * Read the display label for the backstory heading from a profile's preferences.json.
      *
      * Display-only: mirrors core ProfilePreferences::getBackstoryLabel() by reading
-     * `labels.backstory`. Any missing, unreadable, or malformed file yields null so
-     * callers can fall back to their own default heading.
+     * `prompts.labels.backstory` (the real on-disk preferences.json schema). Any
+     * missing, unreadable, or malformed file yields null so callers can fall back
+     * to their own default heading.
      */
     public function backstoryLabel(string $profilePath): ?string
     {
@@ -55,13 +56,18 @@ final readonly class ProfilePaths
             return null;
         }
 
-        $labels = $data['labels'] ?? null;
+        $prompts = $data['prompts'] ?? null;
+        if (!is_array($prompts)) {
+            return null;
+        }
+
+        $labels = $prompts['labels'] ?? null;
         if (!is_array($labels)) {
             return null;
         }
 
         $label = $labels['backstory'] ?? null;
 
-        return is_string($label) ? $label : null;
+        return is_string($label) && $label !== '' ? $label : null;
     }
 }
