@@ -2,7 +2,7 @@
 
 Plan: docs/superpowers/plans/2026-07-13-coqui-toolkit-backstory-plan.md
 
-- Task 1: pending — Package scaffold & build tooling
+- Task 1: complete (commits 82fb511..4c531cf, review clean) — Package scaffold & build tooling
 - Task 2: pending — Extractor layer (port + absorb -formats, no discovery seam)
 - Task 3: pending — Generator core + ProfilePaths
 - Task 4: pending — Inspection, /backstory handler, toolkit registration
