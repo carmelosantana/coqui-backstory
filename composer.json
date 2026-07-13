@@ -1,0 +1,61 @@
+{
+    "name": "coquibot/coqui-toolkit-backstory",
+    "description": "Optional Coqui toolkit that generates backstory.md from profile source files (Word, PDF, HTML, and the dependency-free formats).",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "coqui",
+        "backstory",
+        "toolkit",
+        "php-agents"
+    ],
+    "authors": [
+        {
+            "name": "Carmelo Santana"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "league/html-to-markdown": "^5.1",
+        "phpoffice/phpword": "^1.0",
+        "smalot/pdfparser": "^2.0"
+    },
+    "require-dev": {
+        "carmelosantana/php-agents": ">=0.14",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoquiBot\\Toolkits\\Backstory\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "stubs/coqui_repl_contracts.php"
+        ],
+        "psr-4": {
+            "CoquiBot\\Toolkits\\Backstory\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "php-agents": {
+            "toolkits": [
+                "CoquiBot\\Toolkits\\Backstory\\BackstoryToolkit"
+            ],
+            "description": "Generate backstory.md from a profile's backstory/ source files. Reads text, markdown, JSON, YAML, CSV, code, SQL, XML, RTF, office documents, plus Word, PDF, and HTML via bundled dependencies."
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

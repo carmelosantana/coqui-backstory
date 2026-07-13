@@ -1,0 +1,8 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    scanFiles:
+        - stubs/coqui_repl_contracts.php
+    tmpDir: .phpstan-cache
