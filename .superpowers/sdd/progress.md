@@ -1,0 +1,11 @@
+# SDD Progress — coqui-toolkit-backstory
+
+Plan: docs/superpowers/plans/2026-07-13-coqui-toolkit-backstory-plan.md
+
+- Task 1: pending — Package scaffold & build tooling
+- Task 2: pending — Extractor layer (port + absorb -formats, no discovery seam)
+- Task 3: pending — Generator core + ProfilePaths
+- Task 4: pending — Inspection, /backstory handler, toolkit registration
+- Task 5: pending — README & package docs
+- Task 6: pending — Integration validation against #157 branch (REAL GATE)
+- Task 7: pending — Deprecate -formats package
