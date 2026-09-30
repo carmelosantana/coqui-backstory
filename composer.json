@@ -1,5 +1,5 @@
 {
-    "name": "coquibot/coqui-toolkit-backstory",
+    "name": "carmelosantana/coqui-backstory",
     "description": "Optional Coqui toolkit that generates backstory.md from profile source files (Word, PDF, HTML, and the dependency-free formats).",
     "type": "library",
     "license": "MIT",
@@ -24,6 +24,9 @@
         "carmelosantana/php-agents": ">=0.14",
         "pestphp/pest": "^3.0",
         "phpstan/phpstan": "^2.0"
+    },
+    "replace": {
+        "coquibot/coqui-toolkit-backstory": "self.version"
     },
     "autoload": {
         "psr-4": {
