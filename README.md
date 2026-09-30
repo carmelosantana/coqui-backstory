@@ -1,4 +1,4 @@
-# coqui-toolkit-backstory
+# coqui-backstory
 
 Optional [Coqui](https://github.com/carmelosantana/coqui) toolkit that generates a
 profile's `backstory.md` from the source files under `profiles/<name>/backstory/`. It
@@ -11,7 +11,7 @@ mod — all in one toolkit, with no discovery seam to configure.
 ## Install
 
 ```bash
-/mods install coquibot/coqui-toolkit-backstory
+/mods install carmelosantana/coqui-backstory
 ```
 
 The toolkit self-registers the `/backstory` REPL command via Coqui's toolkit
